@@ -720,7 +720,7 @@ h1 {
 
 .heading-number {
   color: var(--muted);
-  opacity: 0.7;
+  opacity: 1;
   margin-left: 7px;
 }
 
@@ -842,10 +842,8 @@ h2 {
 }
 
 .responsibility-index {
-  color: #78a936;
-  font:
-    11px "DM Mono",
-    monospace;
+  color: #526b2f;
+  font: 500 11px "DM Mono", monospace;
 }
 
 .responsibility-grid p {
@@ -1125,6 +1123,10 @@ h2 {
 
 :root[data-theme="dark"] .icon-grid {
   color: #e4defc;
+}
+
+:root[data-theme="dark"] .responsibility-index {
+  color: var(--accent);
 }
 
 .icon-spark {
@@ -1964,76 +1966,118 @@ button:focus-visible {
   .copyright {
     width: 100%;
   }
-}
 
-@media (max-width: 420px) {
-  .shell {
-    width: calc(100% - 30px);
+  @media (max-width: 420px) {
+    .shell {
+      width: calc(100% - 30px);
+    }
+
+    .hero h1 {
+      font-size: 42px;
+    }
+
+    .hero-visual {
+      min-height: 330px;
+      margin-inline: -4px;
+    }
+
+    .code-window {
+      width: 86%;
+    }
+
+    .code-body {
+      padding-inline: 10px;
+      font-size: 11px;
+    }
+
+    .floating-chip {
+      font-size: 11px;
+      padding: 8px 10px;
+    }
+
+    .chip-react {
+      left: 0;
+    }
+
+    .chip-ts {
+      right: 0;
+    }
+
+    .visual-note {
+      font-size: 12px;
+    }
+
+    .contact-email {
+      font-size: 16px;
+      gap: 10px;
+    }
+
+    .experience-company {
+      flex-basis: calc(100% - 61px);
+    }
+
+    .at-company {
+      display: block;
+      margin-top: 3px;
+    }
   }
 
-  .hero h1 {
-    font-size: 42px;
+  @media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+
+    .js .reveal {
+      opacity: 1;
+      transform: none;
+    }
   }
 
-  .hero-visual {
-    min-height: 330px;
-    margin-inline: -4px;
+
+  /* Labsquire → TestGO product-transition highlight */
+  .legacy-label {
+    display: inline-block;
+    margin: 0.25rem 0 0.25rem 0.35rem;
+    padding: 0.22rem 0.5rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--muted);
+    font: 400 10px/1.5 "DM Mono", monospace;
+    letter-spacing: 0;
+    vertical-align: middle;
   }
 
-  .code-window {
-    width: 86%;
-  }
-
-  .code-body {
-    padding-inline: 10px;
-    font-size: 11px;
-  }
-
-  .floating-chip {
-    font-size: 11px;
-    padding: 8px 10px;
-  }
-
-  .chip-react {
-    left: 0;
-  }
-
-  .chip-ts {
-    right: 0;
-  }
-
-  .visual-note {
-    font-size: 12px;
-  }
-
-  .contact-email {
-    font-size: 16px;
+  .product-transition {
+    display: flex;
+    align-items: flex-start;
     gap: 10px;
+    margin: 16px 0 4px;
+    padding: 13px 14px;
+    border: 1px solid var(--line);
+    border-left: 3px solid #24bfc9;
+    border-radius: 12px;
+    background: var(--surface-2);
   }
 
-  .experience-company {
-    flex-basis: calc(100% - 61px);
+  .transition-indicator {
+    flex: 0 0 8px;
+    width: 8px;
+    height: 8px;
+    margin-top: 6px;
+    border-radius: 50%;
+    background: #24bfc9;
+    box-shadow: 0 0 0 3px color-mix(in srgb, #24bfc9 17%, transparent);
   }
 
-  .at-company {
+  .product-transition strong {
     display: block;
-    margin-top: 3px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-
-  .js .reveal {
-    opacity: 1;
-    transform: none;
+    margin: 0;
+    color: var(--ink);
   }
 }
