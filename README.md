@@ -2,7 +2,7 @@
 
 A fast, accessible, single-page personal portfolio built with plain **HTML, CSS and JavaScript** — no frameworks, no build step.
 
-**Live site:** https://narendrakoya999.github.io/Portfolio-Website/
+**Live site:** https://narendrakoya999.github.io/narendra-koya-frontend-developer-portfolio/
 
 ---
 
