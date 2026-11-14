@@ -1571,6 +1571,41 @@ button:focus-visible {
   gap: 8px;
 }
 
+
+/* ========================================
+   COOKIE SETTINGS BUTTON
+======================================== */
+
+#cookie-settings {
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+#cookie-settings:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+#cookie-settings:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+}
+
+@media (max-width: 760px) {
+  #cookie-settings {
+    font-size: 11px;
+  }
+}
+
 @media (max-width: 980px) {
   .hero {
     grid-template-columns: 1fr 0.8fr;
@@ -1966,118 +2001,184 @@ button:focus-visible {
   .copyright {
     width: 100%;
   }
+}
 
-  @media (max-width: 420px) {
-    .shell {
-      width: calc(100% - 30px);
-    }
+/* ========================================
+   SMALL MOBILE SCREENS
+======================================== */
 
-    .hero h1 {
-      font-size: 42px;
-    }
-
-    .hero-visual {
-      min-height: 330px;
-      margin-inline: -4px;
-    }
-
-    .code-window {
-      width: 86%;
-    }
-
-    .code-body {
-      padding-inline: 10px;
-      font-size: 11px;
-    }
-
-    .floating-chip {
-      font-size: 11px;
-      padding: 8px 10px;
-    }
-
-    .chip-react {
-      left: 0;
-    }
-
-    .chip-ts {
-      right: 0;
-    }
-
-    .visual-note {
-      font-size: 12px;
-    }
-
-    .contact-email {
-      font-size: 16px;
-      gap: 10px;
-    }
-
-    .experience-company {
-      flex-basis: calc(100% - 61px);
-    }
-
-    .at-company {
-      display: block;
-      margin-top: 3px;
-    }
+@media (max-width: 420px) {
+  .shell {
+    width: calc(100% - 30px);
   }
 
-  @media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-      scroll-behavior: auto !important;
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-    }
-
-    .js .reveal {
-      opacity: 1;
-      transform: none;
-    }
+  .hero h1 {
+    font-size: 42px;
   }
 
-
-  /* Labsquire → TestGO product-transition highlight */
-  .legacy-label {
-    display: inline-block;
-    margin: 0.25rem 0 0.25rem 0.35rem;
-    padding: 0.22rem 0.5rem;
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    color: var(--muted);
-    font: 400 10px/1.5 "DM Mono", monospace;
-    letter-spacing: 0;
-    vertical-align: middle;
+  .hero-visual {
+    min-height: 330px;
+    margin-inline: -4px;
   }
 
-  .product-transition {
-    display: flex;
-    align-items: flex-start;
+  .code-window {
+    width: 86%;
+  }
+
+  .code-body {
+    padding-inline: 10px;
+    font-size: 11px;
+  }
+
+  .floating-chip {
+    font-size: 11px;
+    padding: 8px 10px;
+  }
+
+  .chip-react {
+    left: 0;
+  }
+
+  .chip-ts {
+    right: 0;
+  }
+
+  .visual-note {
+    font-size: 12px;
+  }
+
+  .contact-email {
+    font-size: 16px;
     gap: 10px;
-    margin: 16px 0 4px;
-    padding: 13px 14px;
-    border: 1px solid var(--line);
-    border-left: 3px solid #24bfc9;
-    border-radius: 12px;
-    background: var(--surface-2);
   }
 
-  .transition-indicator {
-    flex: 0 0 8px;
-    width: 8px;
-    height: 8px;
-    margin-top: 6px;
-    border-radius: 50%;
-    background: #24bfc9;
-    box-shadow: 0 0 0 3px color-mix(in srgb, #24bfc9 17%, transparent);
+  .experience-company {
+    flex-basis: calc(100% - 61px);
   }
 
-  .product-transition strong {
+  .at-company {
     display: block;
-    margin: 0;
-    color: var(--ink);
+    margin-top: 3px;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION ACCESSIBILITY
+   Applies to all screen sizes
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ========================================
+   LABSQUIRE → TESTGO TRANSITION
+   Applies to all screen sizes
+======================================== */
+
+.legacy-label {
+  display: inline-block;
+  margin: 0.25rem 0 0.25rem 0.35rem;
+  padding: 0.22rem 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font: 400 10px/1.5 "DM Mono", monospace;
+  letter-spacing: 0;
+  vertical-align: middle;
+}
+
+.product-transition {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 16px 0 4px;
+  padding: 13px 14px;
+  border: 1px solid var(--line);
+  border-left: 3px solid #24bfc9;
+  border-radius: 12px;
+  background: var(--surface-2);
+}
+
+.transition-indicator {
+  flex: 0 0 8px;
+  width: 8px;
+  height: 8px;
+  margin-top: 6px;
+  border-radius: 50%;
+  background: #24bfc9;
+  box-shadow: 0 0 0 3px color-mix(in srgb, #24bfc9 17%, transparent);
+}
+
+.product-transition strong {
+  display: block;
+  margin: 0;
+  color: var(--ink);
+}
+
+/* ========================================
+   COOKIE SETTINGS BUTTON
+======================================== */
+
+#cookie-settings {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.4;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+#cookie-settings:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+  background: var(--surface-2);
+}
+
+#cookie-settings:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+}
+
+/* ========================================
+   FOOTER RESPONSIVENESS
+======================================== */
+
+@media (max-width: 760px) {
+  #cookie-settings {
+    font-size: 11px;
+    min-height: 34px;
+  }
+}
+
+@media (max-width: 420px) {
+  #cookie-settings {
+    width: 100%;
   }
 }

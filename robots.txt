@@ -1,4 +1,5 @@
+
 User-agent: *
 Allow: /
 
-Sitemap: https://narendrakoya999.github.io/Personal-Portfolio-Website/sitemap.xml
+Sitemap: https://narendrakoya999.github.io/narendra-koya-frontend-developer-portfolio/sitemap.xml
